@@ -1,0 +1,7 @@
+
+
+
+1) Create GitLab account
+2) Create proposal
+3) Confirm time slot
+4) Code!
