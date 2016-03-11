@@ -15,6 +15,8 @@
 			* Password:<input type="password" name="password" id="pwd"> <br> <br>
 			<input type="submit" name="submit" value="Submit">
 		</form>
+		<br>
+		<a href="registration.php">New users, register here</a>
 
 	</body>
 </html>
