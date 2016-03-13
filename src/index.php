@@ -18,5 +18,7 @@
 		<br>
 		<a href="registration.php">New users, register here</a>
 
+		<p>Copyright SKO Developers</p>
+
 	</body>
 </html>
