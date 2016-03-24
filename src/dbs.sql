@@ -27,7 +27,7 @@ CREATE TABLE `Info` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE`signin` (
+CREATE TABLE `signin` (
   `username` char(99) NOT NULL DEFAULT'',
   `password` char(99) NOT NULL DEFAULT '',
   PRIMARY KEY (`username`),
