@@ -11,7 +11,7 @@
 	<body>
 		<ul>
 			<li class="header"><a href="index.php">CHATTY</a></li>
-			<li class="right"><a href="registration.php ?> ?>">Sign Up</a></li>
+			<li class="right"><a href="registration.php">Sign Up</a></li>
 			<li class="right"><a href="index.php">Sign In</a></li>
 		</ul>
 		<br />
