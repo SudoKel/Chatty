@@ -99,6 +99,11 @@ a:hover{
 	text-align: center;
 }
 
+.error{
+  text-align: center;
+  color: red;
+}
+
 ul {
     list-style-type: none;
     margin: 0;

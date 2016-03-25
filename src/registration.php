@@ -18,7 +18,7 @@ include ('reg.php');
 		</ul>
 		<br />
 		<br />
-		<form>
+		<form id="registration" action="" method="POST">
 			<table align="center">
 				<tr>
 				<th colspan="2">Sign Up</th>
@@ -418,5 +418,7 @@ include ('reg.php');
 				</tr>
 			</table>
 		</form>
+
+		<?php echo "<div class=\"error\">$error</div>"; ?>
 	</body>
 </html>
