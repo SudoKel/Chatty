@@ -42,7 +42,7 @@
 		<div id="signup">Don't have an account? <a href="registration.html">Sign up</a>!</div>
 
 
-		<!-- php file to  -->
+		<!-- php file to process from data -->
 		<?php
 
 		    $error = "";                // error message
