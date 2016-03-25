@@ -1,5 +1,7 @@
 <?php
-	session_start();
+
+include ('reg.php');
+	//session_start();
 ?>
 
 <!DOCTYPE html>
@@ -159,7 +161,7 @@
 				<tr>
 					<td>Country:</td>
 					<td>
-						<select>
+						<select name = "country">
 							<option value="AF">Afghanistan</option>
 							<option value="AX">Aland Islands</option>
 							<option value="AL">Albania</option>
