@@ -28,7 +28,7 @@
 			$pass = $_POST['password'];
 
 			$sql = "INSERT INTO Info VALUES('','$fname','$lname','$mail','$num','$sex','$dob','$country', '$uname','$pass',0);";
-			//$result = $conn->query($sql);
+			$result = $conn->query($sql);
 
 			if($conn->query($sql) === TRUE)
 			{
