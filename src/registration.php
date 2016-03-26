@@ -406,9 +406,32 @@ include ('reg.php');
 					</td>
 				</tr>
 				<tr>
+				<script>
+				function showHint(str) {
+    				if (str.length == 0) { 
+       				 document.getElementById("txtHint").innerHTML = "";
+        			return;
+    					} else {
+        					var xmlhttp = new XMLHttpRequest();
+        					xmlhttp.onreadystatechange = function() {
+           				 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+            }
+        };
+        				xmlhttp.open("GET", "gethint.php?q=" + str, true);
+        				xmlhttp.send();
+   					 }
+				}
+				</script>
+
 					<td>Username:</td>
-					<td><input type="text" name="username" id="uname"></td>
+					<td><input type="text" onkeyup="showHint(this.value)" name="username" id="uname"></td>
 				</tr>
+				<tr>
+					<td></td>
+					<td>
+					<p>Suggestions: <span id="txtHint"></span></p></td></td>
+					</tr>
 				<tr>
 					<td>Password:</td>
 					<td><input type="password" name="password" id="pwd"></td>

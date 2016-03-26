@@ -33,10 +33,16 @@ $a[] = "Vicky";
 $a[] = "CrispyLips";
 $a[] = "JellyButt";
 $a[] = "AshleySaidWhat";
-$a[] = "UnfirendNow";
+$a[] = "UnfriendNow";
 $a[] = "LeJuanJames";
 $a[] = "MyNameIs";
 $a[] = "KanyeWest";
+$a[] = "UncleJoe";
+$a[] = "Xanny";
+$a[] = "Yolanda";
+$a[] = "Zante";
+$a[] = "Dante";
+$a[] = "QueenB";
 
 // get the q parameter from URL
 $q = $_REQUEST["q"];
