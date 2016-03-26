@@ -9,6 +9,7 @@ include ('reg.php');
 	<head>
 		<title>Registration Form</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="script/bg-slider.js"></script>
 	</head>
 	<body>
 		<ul>
@@ -19,7 +20,7 @@ include ('reg.php');
 		<br />
 		<br />
 		<form id="registration" action="" method="POST">
-			<table align="center">
+			<table id="tbl" align="center">
 				<tr>
 				<th colspan="2">Sign Up</th>
 				</tr>
@@ -420,5 +421,6 @@ include ('reg.php');
 		</form>
 
 		<?php echo "<div class=\"error\">$error</div>"; ?>
+
 	</body>
 </html>

@@ -1,12 +1,15 @@
 body{
 	font-size: 1em;
-	background: #C2D6DF;
-	background-image: url("../img/bg-main.jpg");
-	background-repeat: none;
+	background-repeat: no-repeat;
 	background-size: cover;
 	font-family: Arial, serif;
 	margin: 0;
 	padding: 0;
+  /*-webkit-animation-name: fade;
+  animation-name: fade;
+  animation-duration: 4s;*/
+  transition: opacity 1.0s;
+  opacity: 1;
 }
 
 input[type=submit],[type=reset]{
@@ -68,6 +71,12 @@ input[type=radio]:not(old):checked + label > span > span{
   background-image :      -o-linear-gradient(rgb(38,170,229),rgb(20,141,195));
   background-image : -webkit-linear-gradient(rgb(38,170,229),rgb(20,141,195));
   background-image :         linear-gradient(rgb(38,170,229),rgb(20,141,195));
+}
+
+#tbl {
+  background: rgba(255,255,255,0.5);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 td{
@@ -139,4 +148,22 @@ li.header{
 
 li.header a:hover{
 	background-color: #333;
+}
+
+@keyframes fade{
+  0%{
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
