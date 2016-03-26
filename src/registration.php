@@ -20,7 +20,7 @@ include ('reg.php');
 		<br />
 		<br />
 		<form id="registration" action="" method="POST">
-			<table align="center">
+			<table id="tbl" align="center">
 				<tr>
 				<th colspan="2">Sign Up</th>
 				</tr>

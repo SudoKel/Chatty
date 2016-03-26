@@ -18,7 +18,7 @@
 		<br />
 		<br />
 		<form id="login" action="" method="post">
-			<table align="center">
+			<table id="tbl" align="center">
 				<tr>
 					<th colspan="2">Sign In</th>
 				</tr>
