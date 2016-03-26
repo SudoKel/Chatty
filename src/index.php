@@ -7,11 +7,12 @@
 	<head>
 		<title>Sign In</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="script/bg-slider.js"></script>
 	</head>
 	<body>
 		<ul>
 			<li class="header"><a href="index.php">CHATTY</a></li>
-			<li class="right"><a href="registration.html">Sign Up</a></li>
+			<li class="right"><a href="registration.php">Sign Up</a></li>
 			<li class="right"><a href="index.php">Sign In</a></li>
 		</ul>
 		<br />
@@ -42,6 +43,7 @@
 		<?php echo "<div class=\"error\">$error</div>"; ?>
 
 		<br />
-		<div id="signup">Don't have an account? <a href="registration.html">Sign up</a>!</div>
+		<div id="signup">Don't have an account? <a href="registration.php">Sign up</a>!</div>
+
 	</body>
 </html>
