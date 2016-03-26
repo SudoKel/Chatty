@@ -1,4 +1,6 @@
 <?php
+	session_start();
+
 	if(!isset($_POST['username']) || !isset($_POST['password'])) 
 	{
 		echo "false";
@@ -20,6 +22,9 @@
 
 		if($result->num_rows == 1)
 		{
+			$update = "update Info set online = 1 where username = '$uname'";
+			$conn->query($update);
+
 			while($row = $result->fetch_assoc()) 
 		    {
 		        $_SESSION['fName'] = $row["fName"];

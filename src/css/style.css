@@ -113,8 +113,23 @@ a:hover{
   color: red;
 }
 
+.logout{
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
 td.hint{
   padding-top: -5px;
+}
+
+.welcome{
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 ul {

@@ -36,6 +36,7 @@
 			 "`Country` int(99) NOT NULL,".
 			 "`username` char(99) NOT NULL,".
 			 "`password` char(99) NOT NULL,".
+			 "`online` TINYINT(1),".
 			 "PRIMARY KEY (`ID`),".
 			 "KEY `phonenum` (`phonenum`))".
 			 "ENGINE=InnoDB AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;";
@@ -48,7 +49,7 @@
 	echo "<br />";
  	echo "<br />";
 
-	$insert = "insert into Info values('','Kelwin','Joanes','kssj13@mun.ca','7097642504','M','1990-04-25','Tanzania','kelel','joanes2016');";
+	$insert = "insert into Info values('','Kelwin','Joanes','kssj13@mun.ca','7097642504','M','1990-04-25','Tanzania','kelel','joanes2016',0);";
 
 	if ($conn->query($insert) === TRUE)
 	    echo "Data inserted successfully";
