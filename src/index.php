@@ -1,5 +1,5 @@
 <?php
-	include('login.php'); // Includes Login Script
+	session_start();
 ?>
 
 <!DOCTYPE html>
@@ -8,6 +8,32 @@
 		<title>Sign In</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script src="script/bg-slider.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#submit").click(function(e){
+					e.preventDefault();
+					var username = $("#uname").val();
+					var password = $("#pwd").val();
+				 	$.ajax({
+						type: "POST",
+					 	url:  "login.php",
+					 	data: {username: username, password: password},
+					 	success: function(data)
+					 	{
+					 		if(data == 'true')
+					 		{
+					 			window.location = "chat.php";
+					 		}
+					 		else
+					 		{
+					 			$("#error").css('display','inline');
+					 		}
+						}
+				 	});
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<ul>
@@ -35,12 +61,12 @@
 					</td>
 				</tr>
 				<tr align="center">
-					<td colspan="2"><input type="submit" name="submit" value="Sign in"></td>
+					<td colspan="2"><input id="submit" type="submit" name="submit" value="Sign in"></td>
 				</tr>
 			</table>
 		</form>
 
-		<?php echo "<div class=\"error\">$error</div>"; ?>
+		<div id="error"><p style="text-align: center">Invalid username and/or password!</p></div>
 
 		<br />
 		<div id="signup">Don't have an account? <a href="registration.php">Sign up</a>!</div>

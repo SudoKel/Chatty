@@ -108,8 +108,8 @@ a:hover{
 	text-align: center;
 }
 
-.error{
-  text-align: center;
+#error{
+  display: none;
   color: red;
 }
 
