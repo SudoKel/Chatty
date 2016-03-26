@@ -1,45 +1,67 @@
 <?php
+	$servername = "mysql.cs.mun.ca";
+	$username = "cs3715_kssj13";
+	$password = "orlando1";
+	$database = "cs3715_kssj13";
+
 	//create connection
-	$con = mysqli_connect("mysql.cs.mun.ca", "cs3715_kssj13", "orlando1");
+	$conn = new mysqli($servername, $username, $password, $database);
 
 	//check connection
-	if ($con->connect_error) 
-	{
-	    die("Connection failed: " . $con->connect_error);
-	} 
+	if ($conn->connect_error)
+	    die("Connection failed: " . $conn->connect_error);
+ 	else echo "Connection successful!";
 
-	$schema = "DROP SCHEMA IF EXISTS world;".
-		      "CREATE SCHEMA world;";
+ 	echo "<br />";
+ 	echo "<br />";
 
-	//create and select database
-	mysqli_query($con, $schema);
-	mysqli_select_db($con, “world”);
+ 	$delete = "drop table Info;";
 
-	$table = "SET AUTOCOMMIT=0;".
-			 "CREATE TABLE `Info`(".
+ 	if ($conn->query($delete) === TRUE)
+	    echo "Table dropped successfully";
+	else
+	    echo "Error dropping table: " . $conn->error;
+
+	echo "<br />";
+ 	echo "<br />";
+
+	$table = "CREATE TABLE `Info`(".
 			 "`ID` int(11) NOT NULL AUTO_INCREMENT,".
-			 "`fName` char(99) Not NULL DEFAULT'',".
-			 "`lName` char(99) NOT NULL DEFAULT '',".
-			 "`email` char(99) NOT NULL DEFAULT '',".
-			 "`phonenum` int(99) NOT NULL DEFAULT '',".
-			 "`sex` char(10) NOT NULL DEFAULT '',".
-			 "`dob` Date NOT NULL DEFAULT '',".
-			 "`Country` int(99) NOT NULL DEFAULT '',".
-			 "`username` char(99) NOT NULL DEFAULT'',".
-			 "`password` char(99) NOT NULL DEFAULT '',".
+			 "`fName` char(99) Not NULL,".
+			 "`lName` char(99) NOT NULL,".
+			 "`email` char(99) NOT NULL,".
+			 "`phonenum` int(99) NOT NULL,".
+			 "`sex` char(10) NOT NULL,".
+			 "`dob` Date NOT NULL,".
+			 "`Country` int(99) NOT NULL,".
+			 "`username` char(99) NOT NULL,".
+			 "`password` char(99) NOT NULL,".
 			 "PRIMARY KEY (`ID`),".
 			 "KEY `phonenum` (`phonenum`))".
 			 "ENGINE=InnoDB AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;";
 
-	$insert = "insert into Info values('Kelwin','Joanes','kssj13@mun.ca','7097642504','m','1990-04-25','Tanzania','kelel','joanes2016')";
+	if ($conn->query($table) === TRUE)
+	    echo "Table Info created successfully";
+	else
+	    echo "Error creating table: " . $conn->error;
 
-	mysqli_query($con, $table);
-	mysqli_query($con, $insert);
+	echo "<br />";
+ 	echo "<br />";
 
-	$sql = "select fName, lName FROM Info";
-	$result = $con->query($sql);
+	$insert = "insert into Info values('','Kelwin','Joanes','kssj13@mun.ca','7097642504','M','1990-04-25','Tanzania','kelel','joanes2016');";
 
-	if ($result->num_rows > 0) 
+	if ($conn->query($insert) === TRUE)
+	    echo "Data inserted successfully";
+	else
+	    echo "Error inserting data: " . $conn->error;
+
+	$sql = "select fName, lName from Info;";
+	$result = $conn->query($sql);
+
+	echo "<br />";
+ 	echo "<br />";
+
+	if($result->num_rows > 0)
 	{
 	    // output data of each row
 	    while($row = $result->fetch_assoc()) 
@@ -47,10 +69,8 @@
 	        echo "Welcome, " . $row["fName"] . " " . $row["lName"];
 	    }
 	} 
-	else 
-	{
+	else
 	    echo "0 results";
-	}
 
-	$con->close();
+	$conn->close();
 ?>
