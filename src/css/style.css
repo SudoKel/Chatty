@@ -113,6 +113,13 @@ a:hover{
   color: red;
 }
 
+.error {
+  display: none;
+  color: red;
+  text-align: center;
+  font-size: 0.75em;
+}
+
 .logout{
   color: #fff;
   text-align: center;

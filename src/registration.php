@@ -9,7 +9,9 @@ include ('reg.php');
 	<head>
 		<title>Registration Form</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script src="script/bg-slider.js"></script>
+		<script src="script/validate.js"></script>
 		<script>
 				function showHint(str) {
     				if (str.length == 0) { 
@@ -43,20 +45,24 @@ include ('reg.php');
 				</tr>
 				<tr>
 					<td>First Name:</td>
-					<td><input type="text" name="first_name" /></td>
+					<td><input type="text" name="first_name" id="fName" /></td>
 				</tr>
+				<tr><td></td><td><p class="error" id="fErr"></p></td><tr>
 				<tr>
 					<td>Last Name:</td>
-					<td><input type="text" name="last_name" /></td>
+					<td><input type="text" name="last_name" id="sName" /></td>
 				</tr>
+				<tr><td></td><td><p class="error" id="sErr"></p></td></tr>
 				<tr>
 					<td>Email:</td>
-					<td><input type="text" name="email" /></td>
+					<td><input type="text" name="email" id="email" /></td>
 				</tr>
+				<tr><td></td><td><p class="error" id="eErr"></p></td></tr>
 				<tr>
 					<td>Phone number:</td>
-					<td><input type="text" name="phone_num" /></td>
+					<td><input type="text" name="phone_num" id="pNum" /></td>
 				</tr>
+				<tr><td></td><td><p class="error" id="pErr"></p></td></tr>
 				<tr>
 					<td>Sex:</td>
 					<td>
@@ -65,11 +71,12 @@ include ('reg.php');
 						<input type="radio" name="gender" value="other" id="other"><label for="other"><span><span></span></span>Other</label>
 					</td>
 				</tr>
+				<tr><td></td><td><p class="error" id="gErr"></p></td></tr>
 				<tr>
 					<td>Date of Birth:</td>
 					<td>
-						<select name="DOBMonth">
-							<option>Month</option>
+						<select name="DOBMonth" id="month">
+							<option value="">Month</option>
 							<option value="January">January</option>
 							<option value="Febuary">February</option>
 							<option value="March">March</option>
@@ -84,8 +91,8 @@ include ('reg.php');
 							<option value="December">December</option>
 						</select>
 
-						<select name="DOBDay">
-							<option>Day&nbsp;</option>
+						<select name="DOBDay" id="day">
+							<option value="">Day&nbsp;</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -119,8 +126,8 @@ include ('reg.php');
 							<option value="31">31</option>
 						</select>
 
-						<select name="DOBYear">
-							<option>Year</option>
+						<select name="DOBYear" id="year">
+							<option value="">Year</option>
 							<option value="1998">1998</option>
 							<option value="1997">1997</option>
 							<option value="1996">1996</option>
@@ -176,11 +183,12 @@ include ('reg.php');
 						</select>
 					</td>
 				</tr>
+				<tr><td></td><td><p class="error" id="dErr"></p></td></tr>
 				<tr>
 					<td>Country:</td>
 					<td>
-						<select name = "country">
-							<option value="xx">Country</option>
+						<select name = "country" id="country">
+							<option value="">Country</option>
 							<option value="AF">Afghanistan</option>
 							<option value="AX">Aland Islands</option>
 							<option value="AL">Albania</option>
@@ -423,10 +431,12 @@ include ('reg.php');
 						</select>
 					</td>
 				</tr>
+				<tr><td></td><td><p class="error" id="cErr"></p></td></tr>
 				<tr>
 					<td>Username:</td>
 					<td><input type="text" onkeyup="showHint(this.value)" name="username" id="uname"></td>
 				</tr>
+				<tr><td></td><td><p class="error" id="uErr"></p></td></tr>
 				<tr>
 					<td class="hint"></td>
 					<td class="hint">
@@ -436,14 +446,15 @@ include ('reg.php');
 					<td>Password:</td>
 					<td><input type="password" name="password" id="pwd"></td>
 				</tr>
+				<tr><td></td><td><p class="error" id="pdErr"></p></td></tr>
 				<tr align="center">
-					<td colspan="2"><input type="submit" name="submit" value="Sign up" />&nbsp;&nbsp;
+					<td colspan="2"><input type="submit" name="submit" id ="submit" value="Sign up" />&nbsp;&nbsp;
 					<input type="reset" name="reset"  value="Reset" /></td>
 				</tr>
 			</table>
 		</form>
 
-		<?php echo "<div class=\"error\">$error</div>"; ?>
+		<!--?php echo "<div class=\"error\">$error</div>"; ?-->
 
 	</body>
 </html>
