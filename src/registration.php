@@ -180,6 +180,7 @@ include ('reg.php');
 					<td>Country:</td>
 					<td>
 						<select name = "country">
+							<option value="xx">Country</option>
 							<option value="AF">Afghanistan</option>
 							<option value="AX">Aland Islands</option>
 							<option value="AL">Albania</option>
