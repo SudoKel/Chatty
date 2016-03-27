@@ -13,21 +13,21 @@ include ('reg.php');
 		<script src="script/bg-slider.js"></script>
 		<script src="script/validate.js"></script>
 		<script>
-				function showHint(str) {
-    				if (str.length == 0) { 
-       				 document.getElementById("txtHint").innerHTML = "";
+			function showHint(str) {
+    			if (str.length == 0) { 
+       				document.getElementById("txtHint").innerHTML = "";
         			return;
-    					} else {
-        					var xmlhttp = new XMLHttpRequest();
-        					xmlhttp.onreadystatechange = function() {
+    			} else {
+					var xmlhttp = new XMLHttpRequest();
+					xmlhttp.onreadystatechange = function() {
            				 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
-            }
-        };
-        				xmlhttp.open("GET", "gethint.php?q=" + str, true);
-        				xmlhttp.send();
-   					 }
-				}
+                			document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+            			}		
+        			};
+					xmlhttp.open("GET", "gethint.php?q=" + str, true);
+					xmlhttp.send();
+   				}
+			}
 		</script>
 	</head>
 	<body>
@@ -38,7 +38,7 @@ include ('reg.php');
 		</ul>
 		<br />
 		<br />
-		<form id="registration" action="" method="POST">
+		<form name="form" id="registration" action="" method="POST">
 			<table id="tbl" align="center">
 				<tr>
 				<th colspan="2">Sign Up</th>
@@ -66,9 +66,9 @@ include ('reg.php');
 				<tr>
 					<td>Sex:</td>
 					<td>
-						<input type="radio" name="gender" value="male" id="male"><label for="male"><span><span></span></span>Male</label>&nbsp;
-						<input type="radio" name="gender" value="female" id="female"><label for="female"><span><span></span></span>Female</label>&nbsp;
-						<input type="radio" name="gender" value="other" id="other"><label for="other"><span><span></span></span>Other</label>
+						<input class="gender" type="radio" name="gender" value="male" id="male"><label for="male"><span><span></span></span>Male</label>&nbsp;
+						<input class="gender" type="radio" name="gender" value="female" id="female"><label for="female"><span><span></span></span>Female</label>&nbsp;
+						<input class="gender" type="radio" name="gender" value="other" id="other"><label for="other"><span><span></span></span>Other</label>
 					</td>
 				</tr>
 				<tr><td></td><td><p class="error" id="gErr"></p></td></tr>

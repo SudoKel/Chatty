@@ -19,7 +19,6 @@
 	function slideback() {
 		if (cntr < backgroundImages.length-1) cntr++;
 		else cntr = 0;
-		console.log(imgLoc[cntr].src);	// debug
 		document.body.background = imgLoc[cntr].src;
 	}
 
