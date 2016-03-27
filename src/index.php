@@ -31,9 +31,15 @@
 					 		{
 					 			window.location = "chat.php";
 					 		}
+					 		else if(data == 'false')
+					 		{
+					 			$("#err1").css('display','inline');
+					 			$("#err2").css('display','none');
+					 		}
 					 		else
 					 		{
-					 			$("#error").css('display','inline');
+					 			$("#err1").css('display','none');
+					 			$("#err2").css('display','inline');
 					 		}
 						}
 				 	});
@@ -75,7 +81,8 @@
 			</table>
 		</form>
 
-		<div id="error"><p style="text-align: center">Invalid username or password!</p></div>
+		<div id="err1" class="error"><p style="text-align: center">Invalid username or password!</p></div>
+		<div id="err2" class="error"><p style="text-align: center">User already signed in!</p></div>
 
 		
 

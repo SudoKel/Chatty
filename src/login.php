@@ -17,26 +17,37 @@
 		$uname = $_POST['username'];
 		$pass = $_POST['password'];
 
-		$sql = "select * from Info where username = '$uname' and password = '$pass';";
+		$sql = "select fName, lName, online from Info where username = '$uname' and password = '$pass';";
 		$result = $conn->query($sql);
 
 		if($result->num_rows == 1)
 		{
-			$update = "update Info set online = 1 where username = '$uname'";
-			$conn->query($update);
-
 			while($row = $result->fetch_assoc()) 
 		    {
-		        $_SESSION['fName'] = $row["fName"];
-		        $_SESSION['lName'] = $row["lName"];
-		    	$_SESSION['uName'] = $row["username"];
+		        $fname  = $row["fName"];
+		        $lname  = $row["lName"];
+		    	$online	= $row["online"];
 		    }
-			
-			echo "true";
-		} 
+
+		    if($online == 1)
+		    {
+		    	echo "online";
+		    }
+		    else
+		    {
+		    	$_SESSION["fName"] = $fname;
+		    	$_SESSION["lName"] = $lname;
+		    	$_SESSION["uName"] = $uname;
+				$update = "update Info set online = 1 where username = '$uname'";
+				$conn->query($update);
+				
+				echo "true";
+		    }
+		}
 		else
-		    echo "false";
-		
-		$conn->close();
+			echo "false";
+			
 	}
+		
+	$conn->close();
 ?>

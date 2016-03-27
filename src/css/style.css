@@ -12,6 +12,12 @@ body{
   opacity: 1;
 }
 
+body#chatPage{
+  background-image: url("../img/bg-chat.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 input[type=submit],[type=reset]{
 	font-size: 1em;
 	background: #148dc3;
@@ -104,34 +110,67 @@ a:hover{
 	color: #26aae5;
 }
 
+<<<<<<< HEAD
 #error{
+=======
+#signup{
+	text-align: center;
+}
+
+.error{
+>>>>>>> b83191dc3597bd50b4107ba5889ba9d52d7b5771
   display: none;
   color: red;
 }
 
 #online{
-  background: #D4FFEA;
+  background: #D9EDEA;
   height: 60vh;
-  width: 10%;
-  overflow: scroll;
+  width: 15%;
+  overflow-y: scroll;
   float: left;
+  border: 1px solid #888;
 }
 
 #chatbox{
+  background: #fff;
   height: 60vh;
-  width: 50%;
-  overflow: scroll;
+  width: 80%;
+  overflow-y: scroll;
+  border: 1px solid #888;
 }
 
 #chat{
-  width: 100%;
+  width: 80%;
   height: 30px;
 }
 
 #container{
-  width: 80%;
-  margin-left: 25%;
+  width: 70%;
+  margin-left: 17%;
   margin-top: 5%;
+}
+
+#chatContainer{
+  width: 60%;
+  margin-left: 28%;
+  margin-top: 2%;
+}
+
+.user{
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.onlineUser{
+  padding: 2px; 
+}
+
+.title{
+  font-weight: bold;
+  padding: 2px;
+  background: #148dc3;
+  color: #fff;
 }
 
 .error {
