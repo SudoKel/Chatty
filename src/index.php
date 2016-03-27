@@ -75,14 +75,16 @@
 				<tr align="center">
 					<td colspan="2"><input id="submit" type="submit" name="submit" value="Sign in"></td>
 				</tr>
+				<tr align="center">
+					<td colspan="2">Don't have an account? <a href="registration.php">Sign up</a>!</td>
+				</tr>
 			</table>
 		</form>
 
 		<div id="err1" class="errorLogin"><p style="text-align: center">Invalid username or password!</p></div>
 		<div id="err2" class="errorLogin"><p style="text-align: center">User already signed in!</p></div>
 
-		<br />
-		<div id="signup">Don't have an account? <a href="registration.php">Sign up</a>!</div>
+		
 
 	</body>
 </html>
