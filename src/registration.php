@@ -449,7 +449,7 @@ include ('reg.php');
 				<tr><td></td><td><p class="error" id="pdErr"></p></td></tr>
 				<tr align="center">
 					<td colspan="2"><input type="submit" name="submit" id ="submit" value="Sign up" />&nbsp;&nbsp;
-					<input type="reset" name="reset"  value="Reset" /></td>
+					<input type="reset" name="reset"  value="Reset" id="reset"/></td>
 				</tr>
 			</table>
 		</form>

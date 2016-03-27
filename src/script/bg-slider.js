@@ -4,8 +4,9 @@
 	backgroundImages[2] = "img/unsplash-2.jpg";
 	backgroundImages[3] = "img/unsplash-3.jpg";
 	backgroundImages[4] = "img/unsplash-4.jpg";
+	backgroundImages[5] = "img/unsplash-5.jpg";
 
-	var speed = 10000;	// interval between slide (in miliseconds)
+	var speed = 7500;	// interval between slide (in miliseconds)
 
 	// preload images
 	var imgLoc = new Array();

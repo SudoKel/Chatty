@@ -104,10 +104,6 @@ a:hover{
 	color: #26aae5;
 }
 
-#signup{
-	text-align: center;
-}
-
 #error{
   display: none;
   color: red;
