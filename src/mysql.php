@@ -12,8 +12,8 @@
 	    die("Connection failed: " . $conn->connect_error);
  	else echo "Connection successful!";
 
- 	echo "<br />";
- 	echo "<br />";
+ 	echo "<br />"
+; 	echo "<br />";
 
  // 	$delete = "drop table Info;";
 
@@ -33,7 +33,7 @@
 	// 		 "`phonenum` int(99) NOT NULL,".
 	// 		 "`sex` char(10) NOT NULL,".
 	// 		 "`dob` Date NOT NULL,".
-	// 		 "`Country` int(99) NOT NULL,".
+	// 		 "`Country` char(99) NOT NULL,".
 	// 		 "`username` char(99) NOT NULL,".
 	// 		 "`password` char(99) NOT NULL,".
 	// 		 "`online` TINYINT(1),".
@@ -49,7 +49,7 @@
 	// echo "<br />";
  // 	echo "<br />";
 
-	// $insert = "insert into Info values('','Kelwin','Joanes','kssj13@mun.ca','7097642504','M','1990-04-25','Tanzania','kelel','joanes2016',0);";
+	// $insert = "insert into Info values('','Kelwin','Joanes','kssj13@mun.ca','7097642504','Male','1990-04-25','TZ','kelel','joanes2016',0);";
 
 	// if ($conn->query($insert) === TRUE)
 	//     echo "Data inserted successfully";
@@ -62,7 +62,7 @@
 	// echo "<br />";
  // 	echo "<br />";
 
- // 	$insert = "insert into Info values('','Saahil','Budhrani','saahil@mun.ca','7083664450','M','1991-05-23','Belize','saahil','saahil',0);";
+ // 	$insert = "insert into Info values('','Saahil','Budhrani','saahil@mun.ca','7083664450','Male','1991-05-23','BZ','saahil','saahil',0);";
 
 	// if ($conn->query($insert) === TRUE)
 	//     echo "Data inserted successfully";
@@ -75,14 +75,14 @@
 	// echo "<br />";
  // 	echo "<br />";
 
- 	$insert = "insert into Info values('','Tomisin','Jenrola','tomi@mun.ca','7083664450','M','1991-05-23','Belize','tomisin','tomisin',0);";
+ // 	$insert = "insert into Info values('','Tomisin','Jenrola','tomi@mun.ca','7083664450','Male','1991-05-23','NG','tomisin','tomisin',0);";
 
-	if ($conn->query($insert) === TRUE)
-	    echo "Data inserted successfully";
-	else
-	    echo "Error inserting data: " . $conn->error;
+	// if ($conn->query($insert) === TRUE)
+	//     echo "Data inserted successfully";
+	// else
+	//     echo "Error inserting data: " . $conn->error;
 
-	$sql = "select fName, lName from Info;";
+	$sql = "select * from Info;";
 	$result = $conn->query($sql);
 
 	echo "<br />";
@@ -91,12 +91,17 @@
 
 	if($result->num_rows > 0)
 	{
+		echo "<table border=\"1\">";
+		echo "<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Phone No.</th><th>Sex</th><th>DOB</th><th>Country</th><th>Username</th><th>Password</th></tr>";
 	    // output data of each row
 	    while($row = $result->fetch_assoc()) 
 	    {
-	        echo "Welcome, " . $row["fName"] . " " . $row["lName"];
-	        echo "<br />";
+	    	echo "<tr>";
+	        echo  "<td>" . $row["ID"] . "</td><td>" . $row["fName"] . "</td><td>" . $row["lName"] . "</td><td>" . $row["email"] . "</td><td>" . $row["phonenum"] . "</td><td>" . $row["sex"] . "</td><td>" . $row["dob"] . "</td><td>" . $row["Country"] . "</td><td>" . $row["username"] . "</td><td>" . 
+	        	$row["password"] . "</td>";
+	        echo "</tr>";
 	    }
+	    echo "</table>";
 	} 
 	else
 	    echo "0 results";
