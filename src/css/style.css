@@ -113,6 +113,31 @@ a:hover{
   color: red;
 }
 
+#online{
+  background: #D4FFEA;
+  height: 60vh;
+  width: 10%;
+  overflow: scroll;
+  float: left;
+}
+
+#chatbox{
+  height: 60vh;
+  width: 50%;
+  overflow: scroll;
+}
+
+#chat{
+  width: 100%;
+  height: 30px;
+}
+
+#container{
+  width: 80%;
+  margin-left: 25%;
+  margin-top: 5%;
+}
+
 .error {
   display: none;
   color: red;

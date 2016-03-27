@@ -1,5 +1,10 @@
 <?php
 	session_start();
+
+	if(isset($_SESSION['uName']) && !empty($_SESSION['uName']))
+	{
+		header("location: chat.php");
+	}
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +26,7 @@
 					 	data: {username: username, password: password},
 					 	success: function(data)
 					 	{
+					 		console.log(data);
 					 		if(data == 'true')
 					 		{
 					 			window.location = "chat.php";
@@ -66,7 +72,7 @@
 			</table>
 		</form>
 
-		<div id="error"><p style="text-align: center">Invalid username and/or password!</p></div>
+		<div id="error"><p style="text-align: center">Invalid username or password!</p></div>
 
 		<br />
 		<div id="signup">Don't have an account? <a href="registration.php">Sign up</a>!</div>

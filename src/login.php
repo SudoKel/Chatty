@@ -29,7 +29,8 @@
 		    {
 		        $_SESSION['fName'] = $row["fName"];
 		        $_SESSION['lName'] = $row["lName"];
-		    } 
+		    	$_SESSION['uName'] = $row["username"];
+		    }
 			
 			echo "true";
 		} 

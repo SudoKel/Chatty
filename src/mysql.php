@@ -15,41 +15,67 @@
  	echo "<br />";
  	echo "<br />";
 
- 	$delete = "drop table Info;";
+ // 	$delete = "drop table Info;";
 
- 	if ($conn->query($delete) === TRUE)
-	    echo "Table dropped successfully";
-	else
-	    echo "Error dropping table: " . $conn->error;
+ // 	if ($conn->query($delete) === TRUE)
+	//     echo "Table dropped successfully";
+	// else
+	//     echo "Error dropping table: " . $conn->error;
 
-	echo "<br />";
- 	echo "<br />";
+	// echo "<br />";
+ // 	echo "<br />";
 
-	$table = "CREATE TABLE `Info`(".
-			 "`ID` int(11) NOT NULL AUTO_INCREMENT,".
-			 "`fName` char(99) Not NULL,".
-			 "`lName` char(99) NOT NULL,".
-			 "`email` char(99) NOT NULL,".
-			 "`phonenum` int(99) NOT NULL,".
-			 "`sex` char(10) NOT NULL,".
-			 "`dob` Date NOT NULL,".
-			 "`Country` int(99) NOT NULL,".
-			 "`username` char(99) NOT NULL,".
-			 "`password` char(99) NOT NULL,".
-			 "`online` TINYINT(1),".
-			 "PRIMARY KEY (`ID`),".
-			 "KEY `phonenum` (`phonenum`))".
-			 "ENGINE=InnoDB AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;";
+	// $table = "CREATE TABLE `Info`(".
+	// 		 "`ID` int(11) NOT NULL AUTO_INCREMENT,".
+	// 		 "`fName` char(99) Not NULL,".
+	// 		 "`lName` char(99) NOT NULL,".
+	// 		 "`email` char(99) NOT NULL,".
+	// 		 "`phonenum` int(99) NOT NULL,".
+	// 		 "`sex` char(10) NOT NULL,".
+	// 		 "`dob` Date NOT NULL,".
+	// 		 "`Country` int(99) NOT NULL,".
+	// 		 "`username` char(99) NOT NULL,".
+	// 		 "`password` char(99) NOT NULL,".
+	// 		 "`online` TINYINT(1),".
+	// 		 "PRIMARY KEY (`ID`),".
+	// 		 "KEY `phonenum` (`phonenum`))".
+	// 		 "ENGINE=InnoDB AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;";
 
-	if ($conn->query($table) === TRUE)
-	    echo "Table Info created successfully";
-	else
-	    echo "Error creating table: " . $conn->error;
+	// if ($conn->query($table) === TRUE)
+	//     echo "Table Info created successfully";
+	// else
+	//     echo "Error creating table: " . $conn->error;
 
-	echo "<br />";
- 	echo "<br />";
+	// echo "<br />";
+ // 	echo "<br />";
 
-	$insert = "insert into Info values('','Kelwin','Joanes','kssj13@mun.ca','7097642504','M','1990-04-25','Tanzania','kelel','joanes2016',0);";
+	// $insert = "insert into Info values('','Kelwin','Joanes','kssj13@mun.ca','7097642504','M','1990-04-25','Tanzania','kelel','joanes2016',0);";
+
+	// if ($conn->query($insert) === TRUE)
+	//     echo "Data inserted successfully";
+	// else
+	//     echo "Error inserting data: " . $conn->error;
+
+	// $sql = "select fName, lName from Info;";
+	// $result = $conn->query($sql);
+
+	// echo "<br />";
+ // 	echo "<br />";
+
+ // 	$insert = "insert into Info values('','Saahil','Budhrani','saahil@mun.ca','7083664450','M','1991-05-23','Belize','saahil','saahil',0);";
+
+	// if ($conn->query($insert) === TRUE)
+	//     echo "Data inserted successfully";
+	// else
+	//     echo "Error inserting data: " . $conn->error;
+
+	// $sql = "select fName, lName from Info;";
+	// $result = $conn->query($sql);
+
+	// echo "<br />";
+ // 	echo "<br />";
+
+ 	$insert = "insert into Info values('','Tomisin','Jenrola','tomi@mun.ca','7083664450','M','1991-05-23','Belize','tomisin','tomisin',0);";
 
 	if ($conn->query($insert) === TRUE)
 	    echo "Data inserted successfully";
@@ -62,12 +88,14 @@
 	echo "<br />";
  	echo "<br />";
 
+
 	if($result->num_rows > 0)
 	{
 	    // output data of each row
 	    while($row = $result->fetch_assoc()) 
 	    {
 	        echo "Welcome, " . $row["fName"] . " " . $row["lName"];
+	        echo "<br />";
 	    }
 	} 
 	else
