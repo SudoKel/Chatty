@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script type="text/javascript">
+			// send messages
 			$(document).ready(function(){
 				$("#submit").click(function(e){
 					e.preventDefault();
@@ -29,61 +30,66 @@
 				});
 			});
 
+			// default
+			var autoScroll = true;
+
+			function disableAutoScroll()
+			{
+				autoScroll = false;
+			}
+
+			function enableAutoScroll()
+			{
+				autoScroll = true;
+			}
+
+			// update chat messages
 			setInterval(function(){
 				$.ajax({
 					 	url:  "get.php",
 					 	success: function(data)
 					 	{
 					 		$("#chatbox").html(data);
-					 		var elem = document.getElementById("chatbox");
-					 		elem.scrollTop = elem.scrollHeight;
+
+					 		if(autoScroll)
+					 		{
+					 			var elem = document.getElementById("chatbox");
+					 			elem.scrollTop = elem.scrollHeight;
+					 		}
 						}
 				 	});
 			}, 500);
+
+			// update online users
+			setInterval(function(){
+				$.ajax({
+					 	url:  "online.php",
+					 	success: function(data)
+					 	{
+					 		$("#online").html(data);
+						}
+				 	});
+			}, 500);		
 		</script>
 	</head>
-	<body>
+	<body id="chatPage">
 		<ul>
 			<li class="header"><a href="index.php">CHATTY</a></li>
-			<li class="right"><a class="logout" href="logout.php">Logout</a></li>
+			<li class="right"><a class="logout" href="logout.php">Sign Out</a></li>
 			<li class="right"><span class="welcome">Welcome, <?php echo "$fname $lname"; ?></span></li>
 		</ul>
 
 		<div id="container">
-			<div id="online">
-				<?php 
-					$servername = "mysql.cs.mun.ca";
-					$username = "cs3715_kssj13";
-					$password = "orlando1";
-					$database = "cs3715_kssj13";
-
-					$conn = new mysqli($servername, $username, $password, $database);
-					$sql = "select username from Info where online = 1;";
-
-					$result = $conn->query($sql);
-	
-					if($result->num_rows > 0)
-					{
-					    // output data of each row
-					    while($row = $result->fetch_assoc()) 
-					    {
-					        echo $row["username"];
-					        echo "<br />";
-					    }
-					}
-				?>
-			</div>
-			<div id="chatbox"></div>
+			<div id="online"></div>
+			<div id="chatbox" onmouseover="disableAutoScroll()" onmouseout="enableAutoScroll()"></div>
 		</div>
 
-		<form id="message">
-			<table width="50%" align="center">
-				<tr>
-					<td><input type="text" id="chat" name="chat" /></td>
-					<td><input type ="submit" id="submit" name="submit" value="Send" /></td>
-				</tr>
-			</table>
-		</form>
+		<div id="chatContainer">
+			<form id="message">
+				<input type="text" id="chat" name="chat" />
+				<input type ="submit" id="submit" name="submit" value="Send" />
+			</form>
+		</div>
 	</body>
 </html>
 
