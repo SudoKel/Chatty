@@ -78,8 +78,8 @@
 			</table>
 		</form>
 
-		<div id="err1" class="error"><p style="text-align: center">Invalid username or password!</p></div>
-		<div id="err2" class="error"><p style="text-align: center">User already signed in!</p></div>
+		<div id="err1" class="errorLogin"><p style="text-align: center">Invalid username or password!</p></div>
+		<div id="err2" class="errorLogin"><p style="text-align: center">User already signed in!</p></div>
 
 		<br />
 		<div id="signup">Don't have an account? <a href="registration.php">Sign up</a>!</div>

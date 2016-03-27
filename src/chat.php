@@ -30,7 +30,7 @@
 				});
 			});
 
-			// default
+			// default should autoscroll
 			var autoScroll = true;
 
 			function disableAutoScroll()
