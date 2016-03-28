@@ -33,3 +33,11 @@ CREATE TABLE `signin` (
   PRIMARY KEY (`username`),
   KEY `password` (`password`),
 ) ENGINE=InnoDB AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `images_tbl`(
+   images_id INT NOT NULL AUTO_INCREMENT,
+   images_path VARCHAR(200) NOT NULL,
+   submission_date DATE,
+   PRIMARY KEY (images_id)
+);
