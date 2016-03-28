@@ -119,6 +119,11 @@ a:hover{
   color: red;
 }
 
+.hint{
+  font-size: 0.8em;
+  vertical-align: top;
+}
+
 #online{
   background: #D9EDEA;
   height: 60vh;
@@ -181,10 +186,6 @@ a:hover{
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
-
-td.hint{
-  padding-top: -5px;
 }
 
 .welcome{

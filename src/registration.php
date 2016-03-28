@@ -31,7 +31,6 @@
 			<li class="right"><a href="index.php">Sign In</a></li>
 		</ul>
 		<br />
-		<br />
 		<form name="form" id="registration" action="" method="POST">
 			<table id="tbl" align="center">
 				<tr>
@@ -430,12 +429,11 @@
 					<td>Username:</td>
 					<td><input type="text" onkeyup="showHint(this.value)" name="username" id="uname" placeholder="Username"></td>
 				</tr>
-				<tr><td></td><td><p class="error" id="uErr"></p></td></tr>
 				<tr>
-					<td class="hint"></td>
-					<td class="hint">
-						<p>Suggestions: <span id="txtHint"></span></p></td></td>
-					</tr>
+					<td></td>
+					<td class="hint"><b>Suggestions: </b><span id="txtHint"></span></td>
+				</tr>
+				<tr><td></td><td><p class="error" id="uErr"></p></td></tr>
 				<tr>
 					<td>Password:</td>
 					<td><input type="password" name="password" id="pwd" placeholder="Password"></td>
