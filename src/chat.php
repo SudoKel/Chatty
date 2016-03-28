@@ -9,9 +9,7 @@
 <html>
 	<head>
 		<title>Chat</title>
-		<link rel="stylesheet" href="twemoji-awesome.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<script src="//twemoji.maxcdn.com/twemoji.min.js"></script>  
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script type="text/javascript">
 			// send messages
@@ -29,6 +27,24 @@
 					 		$("#chatbox").html(data);
 						}
 				 	});
+				});
+				//send imagevar file
+				$("#upload").click(function(e){
+					e.preventDefault();
+					var form = $("form")[1];
+					var formData = new FormData(form);
+					$.ajax({
+						type: "POST",
+						url:  "upload.php",
+						cache: false,
+						contentType: false, 
+						processData: false, 
+						data: formData,
+						success: function (data) {
+							console.log(data);
+							$("#chatbox").html(data);
+						}
+					});
 				});
 			});
 
@@ -90,6 +106,16 @@
 			<form id="message">
 				<input type="text" id="chat" name="chat" />
 				<input type ="submit" id="submit" name="submit" value="Send" />
+			</form>
+		</div>
+
+		<div id="img-upload">
+			<form id="uploader" action="" method="post" enctype="multipart/form-data">
+				<label for="fileToUpload">
+				    <img src="img/upload_img_btn.png">
+				</label>
+			    <input type="file" name="fileToUpload" id="fileToUpload">
+			    <input type="submit" value="Upload" id="upload">
 			</form>
 		</div>
 	</body>
