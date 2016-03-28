@@ -15,72 +15,72 @@
  	echo "<br />"
 ; 	echo "<br />";
 
- // 	$delete = "drop table Info;";
+ 	$delete = "drop table Info;";
 
- // 	if ($conn->query($delete) === TRUE)
-	//     echo "Table dropped successfully";
-	// else
-	//     echo "Error dropping table: " . $conn->error;
+ 	if ($conn->query($delete) === TRUE)
+	    echo "Table dropped successfully";
+	else
+	    echo "Error dropping table: " . $conn->error;
 
-	// echo "<br />";
- // 	echo "<br />";
+	echo "<br />";
+ 	echo "<br />";
 
-	// $table = "CREATE TABLE `Info`(".
-	// 		 "`ID` int(11) NOT NULL AUTO_INCREMENT,".
-	// 		 "`fName` char(99) Not NULL,".
-	// 		 "`lName` char(99) NOT NULL,".
-	// 		 "`email` char(99) NOT NULL,".
-	// 		 "`phonenum` int(99) NOT NULL,".
-	// 		 "`sex` char(10) NOT NULL,".
-	// 		 "`dob` Date NOT NULL,".
-	// 		 "`Country` char(99) NOT NULL,".
-	// 		 "`username` char(99) NOT NULL,".
-	// 		 "`password` char(99) NOT NULL,".
-	// 		 "`online` TINYINT(1),".
-	// 		 "PRIMARY KEY (`ID`),".
-	// 		 "KEY `phonenum` (`phonenum`))".
-	// 		 "ENGINE=InnoDB AUTO_INCREMENT=4080 DEFAULT CHARSET=latin1;";
+	$table = "CREATE TABLE `Info`(".
+			 "`ID` int(11) NOT NULL AUTO_INCREMENT,".
+			 "`fName` char(99) Not NULL,".
+			 "`lName` char(99) NOT NULL,".
+			 "`email` char(99) NOT NULL,".
+			 "`phonenum` int(99) NOT NULL,".
+			 "`sex` char(10) NOT NULL,".
+			 "`dob` Date NOT NULL,".
+			 "`Country` char(99) NOT NULL,".
+			 "`username` char(99) NOT NULL,".
+			 "`password` char(99) NOT NULL,".
+			 "`online` TINYINT(1),".
+			 "PRIMARY KEY (`ID`),".
+			 "KEY `phonenum` (`phonenum`))".
+			 "ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;";
 
-	// if ($conn->query($table) === TRUE)
-	//     echo "Table Info created successfully";
-	// else
-	//     echo "Error creating table: " . $conn->error;
+	if ($conn->query($table) === TRUE)
+	    echo "Table Info created successfully";
+	else
+	    echo "Error creating table: " . $conn->error;
 
-	// echo "<br />";
- // 	echo "<br />";
+	echo "<br />";
+ 	echo "<br />";
 
-	// $insert = "insert into Info values('','Kelwin','Joanes','kssj13@mun.ca','7097642504','Male','1990-04-25','TZ','kelel','joanes2016',0);";
+	$insert = "insert into Info values('','Kelwin','Joanes','kssj13@mun.ca','7097642504','Male','1990-04-25','TZ','kelel','joanes2016',0);";
 
-	// if ($conn->query($insert) === TRUE)
-	//     echo "Data inserted successfully";
-	// else
-	//     echo "Error inserting data: " . $conn->error;
+	if ($conn->query($insert) === TRUE)
+	    echo "Data inserted successfully";
+	else
+	    echo "Error inserting data: " . $conn->error;
 
-	// $sql = "select fName, lName from Info;";
-	// $result = $conn->query($sql);
+	$sql = "select fName, lName from Info;";
+	$result = $conn->query($sql);
 
-	// echo "<br />";
- // 	echo "<br />";
+	echo "<br />";
+ 	echo "<br />";
 
- // 	$insert = "insert into Info values('','Saahil','Budhrani','saahil@mun.ca','7083664450','Male','1991-05-23','BZ','saahil','saahil',0);";
+ 	$insert = "insert into Info values('','Saahil','Budhrani','saahil@mun.ca','7083664450','Male','1991-05-23','BZ','saahil','saahil',0);";
 
-	// if ($conn->query($insert) === TRUE)
-	//     echo "Data inserted successfully";
-	// else
-	//     echo "Error inserting data: " . $conn->error;
+	if ($conn->query($insert) === TRUE)
+	    echo "Data inserted successfully";
+	else
+	    echo "Error inserting data: " . $conn->error;
 
-	// $sql = "select fName, lName from Info;";
-	// $result = $conn->query($sql);
+	$sql = "select fName, lName from Info;";
+	$result = $conn->query($sql);
 
-	// echo "<br />";
- // 	echo "<br />";
+	echo "<br />";
+ 	echo "<br />";
 
- // 	$insert = "insert into Info values('','Tomisin','Jenrola','tomi@mun.ca','7083664450','Male','1991-05-23','NG','tomisin','tomisin',0);";
+ 	$insert = "insert into Info values('','Tomisin','Jenrola','tomi@mun.ca','7083664450','Male','1991-05-23','NG','tomisin','tomisin',0);";
 
-	// if ($conn->query($insert) === TRUE)
-	//     echo "Data inserted successfully";
-	// else
-	//     echo "Error inserting data: " . $conn->error;
+	if ($conn->query($insert) === TRUE)
+	    echo "Data inserted successfully";
+	else
+	    echo "Error inserting data: " . $conn->error;
 
 	$sql = "select * from Info;";
 	$result = $conn->query($sql);
