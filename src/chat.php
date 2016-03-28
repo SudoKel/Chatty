@@ -9,7 +9,9 @@
 <html>
 	<head>
 		<title>Chat</title>
+		<link rel="stylesheet" href="twemoji-awesome.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="//twemoji.maxcdn.com/twemoji.min.js"></script>  
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script type="text/javascript">
 			// send messages

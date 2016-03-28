@@ -39,22 +39,22 @@
 				</tr>
 				<tr>
 					<td>First Name:</td>
-					<td><input type="text" name="first_name" id="fName" /></td>
+					<td><input type="text" name="first_name" id="fName" placeholder="First name" /></td>
 				</tr>
 				<tr><td></td><td><p class="error" id="fErr"></p></td><tr>
 				<tr>
 					<td>Last Name:</td>
-					<td><input type="text" name="last_name" id="sName" /></td>
+					<td><input type="text" name="last_name" id="sName" placeholder="Last name" /></td>
 				</tr>
 				<tr><td></td><td><p class="error" id="sErr"></p></td></tr>
 				<tr>
 					<td>Email:</td>
-					<td><input type="text" name="email" id="email" /></td>
+					<td><input type="text" name="email" id="email" placeholder="Email address" /></td>
 				</tr>
 				<tr><td></td><td><p class="error" id="eErr"></p></td></tr>
 				<tr>
 					<td>Phone number:</td>
-					<td><input type="text" name="phone_num" id="pNum" /></td>
+					<td><input type="text" name="phone_num" id="pNum" placeholder="Phone number" /></td>
 				</tr>
 				<tr><td></td><td><p class="error" id="pErr"></p></td></tr>
 				<tr>
@@ -428,7 +428,7 @@
 				<tr><td></td><td><p class="error" id="cErr"></p></td></tr>
 				<tr>
 					<td>Username:</td>
-					<td><input type="text" onkeyup="showHint(this.value)" name="username" id="uname"></td>
+					<td><input type="text" onkeyup="showHint(this.value)" name="username" id="uname" placeholder="Username"></td>
 				</tr>
 				<tr><td></td><td><p class="error" id="uErr"></p></td></tr>
 				<tr>
@@ -438,7 +438,7 @@
 					</tr>
 				<tr>
 					<td>Password:</td>
-					<td><input type="password" name="password" id="pwd"></td>
+					<td><input type="password" name="password" id="pwd" placeholder="Password"></td>
 				</tr>
 				<tr><td></td><td><p class="error" id="pdErr"></p></td></tr>
 				<tr align="center">
