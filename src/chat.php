@@ -92,7 +92,7 @@
 	</head>
 	<body id="chatPage">
 		<ul>
-			<li class="header"><a href="index.php">CHATTY</a></li>
+			<li class="header"><a href="index.php"><img src="img/logo.png" alt="Chatty" height="50px"></a></li>
 			<li class="right"><a class="logout" href="logout.php">Sign Out</a></li>
 			<li class="right"><span class="welcome">Welcome, <?php echo "$fname $lname"; ?></span></li>
 		</ul>
