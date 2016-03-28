@@ -118,11 +118,8 @@ $(document).ready(function() {
 
 	$("#reset").click(function(f) {
 
-		// f.preventDefault();
-
 		document.getElementById("fErr").style.display = "none";
 		document.getElementById("sErr").style.display = "none";
-		document.getElementById("eErr").style.display = "none";
 		document.getElementById("eErr").style.display = "none";
 		document.getElementById("pErr").style.display = "none";
 		document.getElementById("pErr").style.display = "none";
@@ -131,7 +128,6 @@ $(document).ready(function() {
 		document.getElementById("cErr").style.display = "none";
 		document.getElementById("uErr").style.display = "none";
 		document.getElementById("pdErr").style.display = "none";
-
 
 	});
 
