@@ -1,9 +1,3 @@
-<?php
-
-include ('reg.php');
-	//session_start();
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -77,18 +71,18 @@ include ('reg.php');
 					<td>
 						<select name="DOBMonth" id="month">
 							<option value="">Month</option>
-							<option value="January">January</option>
-							<option value="Febuary">February</option>
-							<option value="March">March</option>
-							<option value="April">April</option>
-							<option value="May">May</option>
-							<option value="June">June</option>
-							<option value="July">July</option>
-							<option value="August">August</option>
-							<option value="September">September</option>
-							<option value="October">October</option>
-							<option value="November">November</option>
-							<option value="December">December</option>
+							<option value="01">January</option>
+							<option value="02">February</option>
+							<option value="03">March</option>
+							<option value="04">April</option>
+							<option value="05">May</option>
+							<option value="06">June</option>
+							<option value="07">July</option>
+							<option value="08">August</option>
+							<option value="09">September</option>
+							<option value="10">October</option>
+							<option value="11">November</option>
+							<option value="12">December</option>
 						</select>
 
 						<select name="DOBDay" id="day">
@@ -448,13 +442,10 @@ include ('reg.php');
 				</tr>
 				<tr><td></td><td><p class="error" id="pdErr"></p></td></tr>
 				<tr align="center">
-					<td colspan="2"><input type="submit" name="submit" id ="submit" value="Sign up" />&nbsp;&nbsp;
+					<td colspan="2"><input type="submit" name="submit" id="submit" value="Sign up" />&nbsp;&nbsp;
 					<input type="reset" name="reset"  value="Reset" id="reset"/></td>
 				</tr>
 			</table>
 		</form>
-
-		<!--?php echo "<div class=\"error\">$error</div>"; ?-->
-
 	</body>
 </html>
