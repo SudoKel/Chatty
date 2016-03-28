@@ -209,6 +209,7 @@ li {
 }
 
 li.right{
+  margin-top: 16px;
 	float: right;
 }
 
@@ -216,13 +217,13 @@ li a {
     display: block;
     color: #fff;
     text-align: center;
-    padding: 14px 16px;
+    padding: 20px 16px;
     text-decoration: none;
 }
 
 li a:hover {
 	color: #fff;
-    background-color: #148dc3;
+  background-color: #148dc3;
 }
 
 li.header{
