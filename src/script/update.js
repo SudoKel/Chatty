@@ -1,9 +1,9 @@
-// file: validate.js
+// file: update.js
 
 // when document is loaded run the following
 $(document).ready(function() {
 	// attach function to execute on click of submit button
-	$("#submit").click(function(e) {
+	$("#update").click(function(e) {
 		// prevent form from submitting data and resetting fields
 		e.preventDefault();
 
@@ -17,8 +17,6 @@ $(document).ready(function() {
 		var month = document.getElementById("month");
 		var year = document.getElementById("year");
 		var country = document.getElementById("country");
-		var username = document.getElementById("uname").value;
-		var password = document.getElementById("pwd").value;
 
 		// retrieve values from selects
 		var dsel = day[day.selectedIndex].value;
@@ -113,25 +111,7 @@ $(document).ready(function() {
 			document.getElementById("cErr").style.display = "none";
 		}
 
-		if(username=="") {
-			document.getElementById("uErr").innerHTML = "*Please create a username.";
-			document.getElementById("uErr").style.display = "inline";
-			filled = false;
-		}
-		else{
-			document.getElementById("uErr").style.display = "none";
-		}
-		
-		if(password=="") {
-			document.getElementById("pdErr").innerHTML = "*Please create a password.";
-			document.getElementById("pdErr").style.display = "inline";
-			filled = false;
-		}
-		else{
-			document.getElementById("pdErr").style.display = "none";
-		}
-
-		// if all fields are filled then submit data to be inserted in the database
+		// if all fields are filled then submit data to be updated in the database
 		if(filled)
 		{
 			// set the gender accordingly
@@ -142,17 +122,17 @@ $(document).ready(function() {
 			else
 				var sex = "Other";
 
-			// use ajax to send all data to reg.php for insertion in the table
+			// use ajax to send all data to update.php for updating the data of current user
 			$.ajax({
 				type: "POST",
-				url:  "reg.php",
+				url:  "update.php",
 				data: {first_name: fName, last_name: sName, email: email, phone_num: pNum, 
 					   gender: sex, DOBYear: ysel, DOBMonth: msel, DOBDay: dsel, 
-					   country: csel, username: username, password: password},
+					   country: csel},
 				success: function(data){
 					// for debugging
 					console.log(data);
-					// if data inserted successfully then redirect to index.php
+					// if data updated successfully then redirect to index.php
 					if(data == 'true')
 						window.location = "index.php";
 				}

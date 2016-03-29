@@ -1,5 +1,11 @@
-<!-- file: reg.php -->
+<!-- file: update.php -->
 <?php
+	// start session
+	session_start();
+
+	// get username from session array
+	$uname = $_SESSION['uName'];
+
 	// variables for sql connection 
 	$servername = "mysql.cs.mun.ca";
 	$username = "cs3715_kssj13";
@@ -17,13 +23,12 @@
 	$sex = $_POST['gender'];
 	$dob = $_POST['DOBYear']. "-". $_POST['DOBMonth'] ."-". $_POST['DOBDay'];
 	$country = $_POST['country'];
-	$uname = $_POST['username'];
-	$pass = $_POST['password'];
 
-	// insert user details in the database
-	$sql = "INSERT INTO Info VALUES('','$fname','$lname','$mail','$num','$sex','$dob','$country', '$uname','$pass',0);";
+	// update user details
+	$sql = "update Info set fName = '$fname', lName = '$lname', email = '$mail', phonenum = '$num', sex = '$sex', dob = '$dob', Country = '$country' 
+	       where username = '$uname';";
 
-	// if insertion is successful then return true
+	// if update is successful then return true
 	if($conn->query($sql) === TRUE)
 	{
 		echo "true";

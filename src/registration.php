@@ -1,12 +1,14 @@
+<!-- file: registration.php -->
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Registration Form</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-		<script src="script/bg-slider.js"></script>
-		<script src="script/validate.js"></script>
+		<script type="text/javascript" src="script/bg-slider.js"></script>
+		<script type="text/javascript" src="script/validate.js"></script>
 		<script>
+			// function for showing suggestions of username
 			function showHint(str) {
     			if (str.length == 0) { 
        				document.getElementById("txtHint").innerHTML = "";
@@ -25,11 +27,11 @@
 		</script>
 	</head>
 	<body>
-		<ul>
-			<li class="header"><a href="index.php"><img src="img/logo.png" alt="Chatty" height="50px"></a></li>
-			<li class="right"><a href="registration.php">Sign Up</a></li>
-			<li class="right"><a href="index.php">Sign In</a></li>
-		</ul>
+		<div id="bar">
+			<span class="header"><a href="index.php"><img src="img/logo.png" alt="Chatty" height="50px"></a></span>
+			<span class="right"><a href="registration.php">Sign Up</a></span>
+			<span class="right"><a href="index.php">Sign In</a></span>
+		</div>
 		<br />
 		<form name="form" id="registration" action="" method="POST">
 			<table id="tbl" align="center">

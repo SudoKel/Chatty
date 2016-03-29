@@ -1,10 +1,12 @@
+<!-- file: mysql.php -->
 <?php
+	// variables for sql connection 
 	$servername = "mysql.cs.mun.ca";
 	$username = "cs3715_kssj13";
 	$password = "orlando1";
 	$database = "cs3715_kssj13";
 
-	//create connection
+	// establish sql connection
 	$conn = new mysqli($servername, $username, $password, $database);
 
 	//check connection
@@ -12,11 +14,13 @@
 	    die("Connection failed: " . $conn->connect_error);
  	else echo "Connection successful!";
 
- 	echo "<br />"
-; 	echo "<br />";
+ 	echo "<br />"; 	
+ 	echo "<br />";
 
+ 	// delete table if it exists
  	$delete = "drop table Info;";
 
+ 	// status of table deletion
  	if ($conn->query($delete) === TRUE)
 	    echo "Table dropped successfully";
 	else
@@ -25,6 +29,7 @@
 	echo "<br />";
  	echo "<br />";
 
+ 	// create table Info for storing user info
 	$table = "CREATE TABLE `Info`(".
 			 "`ID` int(11) NOT NULL AUTO_INCREMENT,".
 			 "`fName` char(99) Not NULL,".
@@ -41,6 +46,7 @@
 			 "KEY `phonenum` (`phonenum`))".
 			 "ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;";
 
+	// status of table creation
 	if ($conn->query($table) === TRUE)
 	    echo "Table Info created successfully";
 	else
@@ -49,46 +55,41 @@
 	echo "<br />";
  	echo "<br />";
 
+ 	// insert user details
 	$insert = "insert into Info values('','Kelwin','Joanes','kssj13@mun.ca','7097642504','Male','1990-04-25','TZ','kelel','joanes2016',0);";
 
+	// status of insertion of data
 	if ($conn->query($insert) === TRUE)
 	    echo "Data inserted successfully";
 	else
 	    echo "Error inserting data: " . $conn->error;
 
-	$sql = "select fName, lName from Info;";
-	$result = $conn->query($sql);
-
-	echo "<br />";
- 	echo "<br />";
-
+ 	// insert user details
  	$insert = "insert into Info values('','Saahil','Budhrani','saahil@mun.ca','7083664450','Male','1991-05-23','BZ','saahil','saahil',0);";
 
+ 	// status of insertion of data
 	if ($conn->query($insert) === TRUE)
 	    echo "Data inserted successfully";
 	else
 	    echo "Error inserting data: " . $conn->error;
 
-	$sql = "select fName, lName from Info;";
-	$result = $conn->query($sql);
-
-	echo "<br />";
- 	echo "<br />";
-
+	// insert user details
  	$insert = "insert into Info values('','Tomisin','Jenrola','tomi@mun.ca','7083664450','Male','1991-05-23','NG','tomisin','tomisin',0);";
 
+ 	// status of insertion of data
 	if ($conn->query($insert) === TRUE)
 	    echo "Data inserted successfully";
 	else
 	    echo "Error inserting data: " . $conn->error;
 
+	// select all data from table
 	$sql = "select * from Info;";
 	$result = $conn->query($sql);
 
 	echo "<br />";
  	echo "<br />";
 
-
+ 	// create a table of all current user details if at least 1 record exists
 	if($result->num_rows > 0)
 	{
 		echo "<table border=\"1\">";
@@ -103,8 +104,10 @@
 	    }
 	    echo "</table>";
 	} 
+	// otherwise no results to display
 	else
 	    echo "0 results";
 
+	// close sql connection
 	$conn->close();
 ?>

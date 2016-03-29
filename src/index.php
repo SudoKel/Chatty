@@ -1,6 +1,9 @@
+<!-- file: index.php -->
 <?php
+	// start session
 	session_start();
 
+	// if username has logged in, then redirect to chat page
 	if(isset($_SESSION['uName']) && !empty($_SESSION['uName']))
 	{
 		header("location: chat.php");
@@ -12,8 +15,8 @@
 	<head>
 		<title>Sign In</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<script src="script/bg-slider.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript" src="script/bg-slider.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$("#submit").click(function(e){
@@ -48,11 +51,11 @@
 		</script>
 	</head>
 	<body>
-		<ul>
-			<li class="header"><a href="index.php"><img src="img/logo.png" alt="Chatty" height="50px"></a></li>
-			<li class="right"><a href="registration.php">Sign Up</a></li>
-			<li class="right"><a href="index.php">Sign In</a></li>
-		</ul>
+		<div id="bar">
+			<span class="header"><a href="index.php"><img src="img/logo.png" alt="Chatty" height="50px"></a></span>
+			<span class="right"><a href="registration.php">Sign Up</a></span>
+			<span class="right"><a href="index.php">Sign In</a></span>
+		</div>
 		<br />
 		<br />
 		<form id="login" action="" method="post">

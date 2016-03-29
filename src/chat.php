@@ -1,6 +1,40 @@
+<!-- file: chat.php -->
 <?php
+	// start session
 	session_start();
 
+	// get username from session array
+	$uname = $_SESSION['uName'];
+
+	// variables for sql connection 
+	$servername = "mysql.cs.mun.ca";
+	$username = "cs3715_kssj13";
+	$password = "orlando1";
+	$database = "cs3715_kssj13";
+
+	// establish sql connection
+	$conn = new mysqli($servername, $username, $password, $database);
+
+	// select first name, last name of user 
+	$sql = "select fName, lName from Info where username = '$uname';";
+
+	// run and save query
+	$result = $conn->query($sql);
+
+	if($result->num_rows == 1)
+	{
+		// update fname and lname if any changes were made
+	    while($row = $result->fetch_assoc())
+	    {
+	    	$_SESSION['fName'] = $row["fName"];
+	    	$_SESSION['lName'] = $row["lName"];
+	    }
+	}
+
+	// close sql connection
+	$conn->close();
+
+	// retrieve first name and last name of user from session array
 	$fname = $_SESSION['fName'];
 	$lname = $_SESSION['lName'];
 ?>
@@ -11,91 +45,21 @@
 		<title>Chat</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-		<script type="text/javascript">
-			// send messages
-			$(document).ready(function(){
-				$("#submit").click(function(e){
-					e.preventDefault();
-					var msg = $("#chat").val();
-					$("#chat").val("");
-				 	$.ajax({
-						type: "POST",
-					 	url:  "post.php",
-					 	data: {chat: msg},
-					 	success: function(data)
-					 	{
-					 		$("#chatbox").html(data);
-						}
-				 	});
-				});
-				//send imagevar file
-				$("#upload").click(function(e){
-					e.preventDefault();
-					var form = $("form")[1];
-					var formData = new FormData(form);
-					$.ajax({
-						type: "POST",
-						url:  "upload.php",
-						cache: false,
-						contentType: false, 
-						processData: false, 
-						data: formData,
-						success: function (data) {
-							console.log(data);
-							$("#chatbox").html(data);
-						}
-					});
-				});
-			});
-
-			// default should autoscroll
-			var autoScroll = true;
-
-			function disableAutoScroll()
-			{
-				autoScroll = false;
-			}
-
-			function enableAutoScroll()
-			{
-				autoScroll = true;
-			}
-
-			// update chat messages
-			setInterval(function(){
-				$.ajax({
-					 	url:  "get.php",
-					 	success: function(data)
-					 	{
-					 		$("#chatbox").html(data);
-
-					 		if(autoScroll)
-					 		{
-					 			var elem = document.getElementById("chatbox");
-					 			elem.scrollTop = elem.scrollHeight;
-					 		}
-						}
-				 	});
-			}, 500);
-
-			// update online users
-			setInterval(function(){
-				$.ajax({
-					 	url:  "online.php",
-					 	success: function(data)
-					 	{
-					 		$("#online").html(data);
-						}
-				 	});
-			}, 500);		
-		</script>
+		<script type="text/javascript" src="script/chat.js"></script>
 	</head>
 	<body id="chatPage">
-		<ul>
-			<li class="header"><a href="index.php"><img src="img/logo.png" alt="Chatty" height="50px"></a></li>
-			<li class="right"><a class="logout" href="logout.php">Sign Out</a></li>
-			<li class="right"><span class="welcome">Welcome, <?php echo "$fname $lname"; ?></span></li>
-		</ul>
+		<div id="bar">
+			<span class="header"><a href="index.php"><img src="img/logo.png" alt="Chatty" height="50px"></a></span>
+			<span class="right">
+				<div class="dropdown">
+					<span class="droplink"><?php echo "$fname $lname"; ?></span>
+					<div class="dropdown-content">
+						<a href="profile.php">Profile</a>
+						<a href="logout.php">Logout</a>
+					</div>
+				</div>
+			</span>
+		</div>
 
 		<div id="container">
 			<div id="online"></div>
@@ -118,5 +82,8 @@
 			    <input type="submit" value="Upload" id="upload">
 			</form>
 		</div>
+
+		<br />
+		<br />
 	</body>
 </html>
