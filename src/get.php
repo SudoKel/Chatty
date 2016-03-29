@@ -1,4 +1,3 @@
-<!-- file: get.php -->
 <?php 
 	// location of chat log file
 	$src = "data/log.txt";

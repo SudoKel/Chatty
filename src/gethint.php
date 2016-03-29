@@ -1,4 +1,3 @@
-<!-- file: gethint.php -->
 <?php
 // Array with names
 $a[] = "Anna";

@@ -1,4 +1,3 @@
-<!-- file: online.php -->
 <?php 
 	// variables for sql connection 
 	$servername = "mysql.cs.mun.ca";

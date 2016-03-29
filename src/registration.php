@@ -1,4 +1,3 @@
-<!-- file: registration.php -->
 <!DOCTYPE html>
 <html>
 	<head>

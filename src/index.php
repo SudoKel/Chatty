@@ -1,4 +1,3 @@
-<!-- file: index.php -->
 <?php
 	// start session
 	session_start();
@@ -29,6 +28,7 @@
 					 	data: {username: username, password: password},
 					 	success: function(data)
 					 	{
+					 		// for debugging
 					 		console.log(data);
 					 		if(data == 'true')
 					 		{

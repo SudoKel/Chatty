@@ -1,4 +1,3 @@
-<!-- file: edit.php -->
 <?php
 	// start session
 	session_start();

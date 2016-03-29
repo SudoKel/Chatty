@@ -1,4 +1,3 @@
-<!-- file: upload.php -->
 <?php
   	// start session
   	session_start();
@@ -31,11 +30,14 @@
         $ext =  GetImageExtension($imgtype);
         // set image's name as the current date and time and append the extension
         $imagename = date("d-m-Y")."-".time().$ext;
-        // finally, transfer the file to the server
-        move_uploaded_file($temp_name, $target_path);
 
         // store the current path of the uploaded image
         $target_path = "uploads/".$imagename;
+
+        $date = date("Y-m-d");
+
+        // finally, transfer the file to the server
+        move_uploaded_file($temp_name, $target_path);
     }
 
     // append current username with img tag pointing to uploaded image 
