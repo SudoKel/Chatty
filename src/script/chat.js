@@ -23,30 +23,6 @@ $(document).ready(function(){
 			}
 	 	});
 	});
-
-	// give user feedback on file name and size
-	$("#fileToUpload").on("change", function(){
-		var x = document.getElementById("fileToUpload");
-		var txt = "";
-		if ('files' in x) {
-        	if (x.files.length == 0) {
-            	txt = "Select one or more files.";
-        	} 
-	        else {
-	        	for (var i = 0; i < x.files.length; i++) {
-		            var file = x.files[i];
-		            if ('name' in file) {
-		                txt += "<br><b>Name:</b> " + file.name + "<br>";
-		            }
-		            if ('size' in file) {
-		                txt += "<b>Size:</b> " + (file.size/1000000).toFixed(2) + " MB <br>";
-		            }
-	            }
-	        }
-    	} 
-
-    	document.getElementById("imgInfo").innerHTML = txt;
-	});
 				
 	// UPLOAD IMAGES
 	// attach function to execute on click of upload button
@@ -72,9 +48,8 @@ $(document).ready(function(){
 				// if file size is > 2mb then alert user
 				if(data == 'File too large. File must be less than 2 megabytes.')
 					alert(data);
-				else
-					// update the chat area with data from upload.php
-					$("#chatbox").html(data);
+				// update the chat area with data from upload.php
+				$("#chatbox").html(data);
 			}
 		});
 	});

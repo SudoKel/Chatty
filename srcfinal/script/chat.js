@@ -49,7 +49,37 @@ $(document).ready(function(){
 			}
 		});
 	});
+
 });
+	//give user feedback on file name and size
+	$("#fileToUpload").on("change",(function(e){
+		var x = document.getElementById("fileToUpload");
+		var txt = "";
+		if ('files' in x) 
+		{
+        	if (x.files.length == 0)
+            	txt = "Select one or more files.";
+	        else 
+	        {
+	        	for (var i = 0; i < x.files.length; i++) 
+	        	{
+		            var file = x.files[i];
+		            if ('name' in file) 
+		            {
+		                txt += "<br><b>Name:</b> " + file.name + "<br>";
+		            }
+		            if ('size' in file) 
+		            {
+		            	var num = file.size/1000000;
+		            	num = num.toFixed(2);
+		                txt += "<b>Size:</b> " + num + " MB <br>";
+		            }
+	            }
+	        }
+    	} 
+
+    	document.getElementById("imgInfo").innerHTML = txt;
+    });
 
 // chat area should autoscroll by default
 var autoScroll = true;
