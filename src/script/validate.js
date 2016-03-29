@@ -73,17 +73,18 @@ $(document).ready(function() {
 			document.getElementById("pErr").style.display = "inline";
 			filled = false;
 		}
-		else{
-			document.getElementById("pErr").style.display = "none";
-		}
-
-		if(isNaN(pNum)) {
-			document.getElementById("pErr").innerHTML = "*You need to specify a number.";
-			document.getElementById("pErr").style.display = "inline";
-			filled = false;
-		}
-		else{
-			document.getElementById("pErr").style.display = "none";
+		else
+		{
+			if(isNaN(pNum)) 
+			{
+				document.getElementById("pErr").innerHTML = "*You need to specify a number.";
+				document.getElementById("pErr").style.display = "inline";
+				filled = false;
+			}
+			else
+			{
+				document.getElementById("pErr").style.display = "none";
+			}
 		}
 
 		if(!gender[0].checked && !gender[1].checked && !gender[2].checked) {

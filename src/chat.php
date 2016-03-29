@@ -80,6 +80,8 @@
 			    <input type="file" name="fileToUpload" id="fileToUpload">
 			    <input type="submit" value="Upload" id="upload">
 			</form>
+			<br />
+			<span id="fileDetails">Please select a file (< 2MB)</span>
 		</div>
 
 		<br />

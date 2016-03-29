@@ -23,6 +23,15 @@ $(document).ready(function(){
 			}
 	 	});
 	});
+
+	// display file name and size on selection
+	$("#fileToUpload").on("change",function(e){
+		var filename = $("#fileToUpload").val();
+		var filesize = this.files[0].size;
+		filesize = filesize/1000;
+
+		document.getElementById("fileDetails").innerHTML = "<b>File Name:</b> " + filename + "<br><b>File Size:</b> " + filesize.toFixed(2) + " KB";
+	});
 				
 	// UPLOAD IMAGES
 	// attach function to execute on click of upload button
@@ -50,6 +59,7 @@ $(document).ready(function(){
 					alert(data);
 				// update the chat area with data from upload.php
 				$("#chatbox").html(data);
+				$("#fileDetails").html("Please select a file (< 2MB)");
 			}
 		});
 	});
