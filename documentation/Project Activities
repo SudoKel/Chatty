@@ -1,0 +1,26 @@
+Team Members:
+Kelwin Joanes
+Oluwatomisin Jenrola
+Saahil Budhrani
+
+Meeting Dates: 
+1.) 1/3/16
+2.) 11/3/16
+3.) 25/3/16
+4.) 26/3/16
+5.) 27/3/16
+
+Software Development: 
+
+1.) Proposal.pdf
+2.) to_do.txt
+3.) CSS: style.css
+4.) Data: log.txt
+5.) Script: bg-slider.js, chat.js, update.js, validate.js
+6.) PHP: chat, edit, get, gethint, index, login, logout, mysql, online. post, profile, reg, registration, update, upload.
+7.)dbs.sql
+8.)php.ini
+
+Documentation: Proposal, to do list and every team members activities is included.
+
+Project Maintainance: On gitlab and every commit is provided in the commit document included.
