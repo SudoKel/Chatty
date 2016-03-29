@@ -80,8 +80,10 @@
 			    <input type="file" name="fileToUpload" id="fileToUpload">
 			    <input type="submit" value="Upload" id="upload">
 			</form>
+			<span id="imgInfo"></span>
 		</div>
 
+		<br />
 		<br />
 		<br />
 	</body>
