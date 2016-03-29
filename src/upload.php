@@ -2,6 +2,16 @@
   	// start session
   	session_start();
 
+    $file_size = $_FILES["fileToUpload"]["size"];
+
+    // if file size is set to 0 then image has exceeded 2mb
+    if($file_size == 0){      
+        $message = 'File too large. File must be less than 2 megabytes.'; 
+        // echo message and exit
+        echo $message; 
+        exit;
+    }
+
  	// get username from session array
   	$user = $_SESSION['uName'];
 

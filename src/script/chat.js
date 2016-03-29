@@ -44,8 +44,13 @@ $(document).ready(function(){
 			success: function (data) {
 				// for debugging
 				console.log(data);
-				// update the chat area with data from upload.php
-				$("#chatbox").html(data);
+
+				// if file size is > 2mb then alert user
+				if(data == 'File too large. File must be less than 2 megabytes.')
+					alert(data);
+				else
+					// update the chat area with data from upload.php
+					$("#chatbox").html(data);
 			}
 		});
 	});
