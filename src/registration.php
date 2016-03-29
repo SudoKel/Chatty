@@ -1,5 +1,13 @@
+
 <!DOCTYPE html>
 <html>
+
+<! -- CS3715 FINAL PROJECT -->
+<!  MEMBERS: KELWIN JOANES, OLUWATOMISIN JENROLA, SAAHIL BUDHRANI-->
+<! DATE SUBMITTED: 29/03/16 -->
+<!  WEB APP NAME: CHATTY-->
+ 
+
 	<head>
 		<title>Registration Form</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />

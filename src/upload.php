@@ -1,4 +1,12 @@
 <?php
+
+/*
+  CS3715 FINAL PROJECT
+  MEMBERS: KELWIN JOANES, OLUWATOMISIN JENROLA, SAAHIL BUDHRANI
+  DATE SUBMITTED: 29/03/16
+  WEB APP NAME: CHATTY
+ */
+
   	// start session
   	session_start();
 
