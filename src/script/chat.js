@@ -59,6 +59,7 @@ $(document).ready(function(){
 					alert(data);
 				// update the chat area with data from upload.php
 				$("#chatbox").html(data);
+				// reset details
 				$("#fileDetails").html("Please select a file (< 2MB)");
 			}
 		});
