@@ -48,24 +48,22 @@ $(document).ready(function() {
 			document.getElementById("sErr").style.display = "none";
 		}
 
-		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		
-		if(re.test(email)==false) {
-			document.getElementById("eErr").innerHTML = "*Please specify a valid email.";
-			document.getElementById("eErr").style.display = "inline";
-			filled = false;
-		}
-		else{
-			document.getElementById("eErr").style.display = "none";
-		}
-
 		if(email=="" || email==null) {
 			document.getElementById("eErr").innerHTML = "*Your email is required.";
 			document.getElementById("eErr").style.display = "inline";
 			filled = false;
 		}
 		else{
-			document.getElementById("eErr").style.display = "none";
+			var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		
+			if(re.test(email)==false) {
+				document.getElementById("eErr").innerHTML = "*Please specify a valid email.";
+				document.getElementById("eErr").style.display = "inline";
+				filled = false;
+			}
+			else{
+				document.getElementById("eErr").style.display = "none";
+			}
 		}
 
 		if(pNum=="" || pNum==null) {
