@@ -2,12 +2,12 @@
 
 // array for storing paths of background images
 var backgroundImages = new Array();
-backgroundImages[0] = "img/unsplash-1.jpg";
+backgroundImages[0] = "img/bg-main.jpg";
 backgroundImages[1] = "img/unsplash-2.jpg";
 backgroundImages[2] = "img/unsplash-3.jpg";
 backgroundImages[3] = "img/unsplash-4.jpg";
 backgroundImages[4] = "img/unsplash-5.jpg";
-backgroundImages[5] = "img/bg-main.jpg";
+backgroundImages[5] = "img/unsplash-1.jpg";
 
 var speed = 6000;	// interval between slide (in ms)
 
