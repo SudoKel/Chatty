@@ -9,7 +9,7 @@ backgroundImages[3] = "img/unsplash-4.jpg";
 backgroundImages[4] = "img/unsplash-5.jpg";
 backgroundImages[5] = "img/bg-main.jpg";
 
-var speed = 5000;	// interval between slide (in ms)
+var speed = 6000;	// interval between slide (in ms)
 
 // preload images
 var imgLoc = new Array();
@@ -26,6 +26,10 @@ function slideback() {
 	if (cntr < backgroundImages.length-1) cntr++;
 	else cntr = 0;
 	document.body.background = imgLoc[cntr].src;
+	// body.css(
+	//   -webkit-transition: background-image 0.2s ease-in-out;
+	//   transition: background-image 0.2s ease-in-out;
+	// );
 }
 
 // when page is loaded call function for changing backgrounds
