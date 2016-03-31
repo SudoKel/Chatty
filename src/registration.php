@@ -41,7 +41,7 @@
 		</div>
 		<br />
 		<form name="form" id="registration" action="" method="POST">
-			<table id="tbl" align="center" width="25%">
+			<table id="tbl" align="center" width="500px">
 				<tr>
 				<th colspan="2">Sign Up</th>
 				</tr>
