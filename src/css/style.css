@@ -45,13 +45,13 @@ input[type=radio]:not(old){
   opacity   : 0;
 }
 
-input[type=radio   ]:not(old) + label{
+input[type=radio]:not(old) + label{
   display      : inline-block;
   margin-left  : -2em;
   line-height  : 1.5em;
 }
 
-input[type=radio   ]:not(old) + label > span{
+input[type=radio]:not(old) + label > span{
   display          : inline-block;
   width            : 0.875em;
   height           : 0.875em;
