@@ -1,3 +1,5 @@
+
+
 // file: chat.js
 
 // when document is loaded run the following
@@ -42,6 +44,8 @@ $(document).ready(function(){
 		var form = $("form")[1];
 		// retrieve the data of the upload form
 		var formData = new FormData(form);
+		// reset value
+		$("#fileToUpload").val("");
 		// use ajax to send the image data to upload.php
 		$.ajax({
 			type: "POST",
@@ -54,8 +58,8 @@ $(document).ready(function(){
 				// for debugging
 				console.log(data);
 
-				// if file size is > 2mb then alert user
-				if(data == 'File too large. File must be less than 2 megabytes.')
+				// if file size is > 2mb or no file is selected then alert user
+				if(data.indexOf('File too large. File must be less than 2 megabytes!') > 0 || data.indexOf('Please select a file!') > 0)
 					alert(data);
 				// update the chat area with data from upload.php
 				$("#chatbox").html(data);
@@ -111,3 +115,4 @@ setInterval(function(){
 		}
 	});
 }, 500);	
+

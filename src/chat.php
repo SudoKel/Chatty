@@ -1,4 +1,3 @@
-
 <?php
 /*
   CS3715 FINAL PROJECT
@@ -75,7 +74,7 @@
 
 		<div id="chatContainer">
 			<form id="message">
-				<input type="text" id="chat" name="chat" />
+				<input type="text" id="chat" name="chat" placeholder="Enter your message here..." />
 				<input type ="submit" id="submit" name="submit" value="Send" />
 			</form>
 		</div>
