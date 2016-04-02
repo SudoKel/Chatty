@@ -16,6 +16,21 @@
 	// retrieve chat message from the post array
 	$chat = $_POST['chat'];
 
+	// convert certain character combinations to corresponding emoticons
+	if($chat == ":P" || $chat == ":p")
+		$chat = "<img src='emoji/grimace.png'>";
+	else if($chat == ":)")
+		$chat = "<img src='emoji/smile.png'>";
+	else if($chat == ":D")
+		$chat = "<img src='emoji/grin.png'>";
+	else if($chat == ":O" || $chat == ":o")
+		$chat = "<img src='emoji/huh.png'>";
+	else if($chat == ":(")
+		$chat = "<img src='emoji/sad.png'>";
+	else{
+		// do nothing
+	}
+
 	// append username and their respective chat message to a string
 	$msg = "<span class=\"user\">$user: </span>" . $chat . "\n";
 

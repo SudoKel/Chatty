@@ -12,22 +12,8 @@
     // start session
     session_start();
 
-    if(empty($_FILES["fileToUpload"]["name"]))
-    {
-      echo "Please select a file!";
-    }
-    else
-    {
-      $file_size = $_FILES["fileToUpload"]["size"];
-
-      // if file size is set to 0 then image has exceeded 2mb
-      if($file_size == 0){      
-          echo 'File too large. File must be less than 2 megabytes!';
-          exit;
-      }
-
     // get username from session array
-      $user = $_SESSION['uName'];
+    $user = $_SESSION['uName'];
 
       // match and return image's extension
     function GetImageExtension($imagetype) {
@@ -79,8 +65,6 @@
       // echo each line as a paragraph
       foreach($history as $msg)
         echo "<p>$msg</p>";    
-    }
-
 
 ?>
 

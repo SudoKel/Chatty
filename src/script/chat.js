@@ -30,9 +30,14 @@ $(document).ready(function(){
 	$("#fileToUpload").on("change",function(e){
 		var filename = $("#fileToUpload").val();
 		var filesize = this.files[0].size;
+		// convert from B to KB
 		filesize = filesize/1000;
 
-		document.getElementById("fileDetails").innerHTML = "<b>File Name:</b> " + filename + "<br><b>File Size:</b> " + filesize.toFixed(2) + " KB";
+		// check file size > 2000KB
+		if(filesize > 2000)
+			alert("File too large. File must be less than 2MB!");
+		else
+			document.getElementById("fileDetails").innerHTML = "<b>File Name:</b> " + filename + "<br><b>File Size:</b> " + filesize.toFixed(2) + " KB";
 	});
 				
 	// UPLOAD IMAGES
@@ -40,6 +45,14 @@ $(document).ready(function(){
 	$("#upload").click(function(e){
 		// prevent form from submitting data and resetting fields
 		e.preventDefault();
+
+		// check if user has selected a file
+		if(document.getElementById("fileToUpload").files.length == 0)
+		{
+			alert("Please select a file!");
+			return;
+		}
+
 		// retrieve the upload form
 		var form = $("form")[1];
 		// retrieve the data of the upload form
@@ -59,8 +72,8 @@ $(document).ready(function(){
 				console.log(data);
 
 				// if file size is > 2mb or no file is selected then alert user
-				if(data.indexOf('File too large. File must be less than 2 megabytes!') > 0 || data.indexOf('Please select a file!') > 0)
-					alert(data);
+				// if(data.indexOf('File too large. File must be less than 2 megabytes!') > 0 || data.indexOf('Please select a file!') > 0)
+				// 	alert(data);
 				// update the chat area with data from upload.php
 				$("#chatbox").html(data);
 				// reset details
