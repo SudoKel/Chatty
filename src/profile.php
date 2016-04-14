@@ -10,6 +10,8 @@
 	// start session
 	session_start();
 
+	include "header.php";
+
 	// retrieve username, first and last name of user from session array
 	$uname = $_SESSION['uName'];
 	$fname = $_SESSION['fName'];

@@ -10,6 +10,8 @@
 	// start session
 	session_start();
 
+	include "header.php";
+
 	// get session variables for setting field values
 	$uname   = $_SESSION['uName'];
 	$fname   = $_SESSION['fName'];

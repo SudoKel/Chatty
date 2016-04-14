@@ -9,6 +9,8 @@
 	// start session
 	session_start();
 
+	include "header.php";
+	
 	// get username from session array
 	$uname = $_SESSION['uName'];
 
@@ -43,6 +45,7 @@
 	// retrieve first name and last name of user from session array
 	$fname = $_SESSION['fName'];
 	$lname = $_SESSION['lName'];
+
 ?>
 
 <!DOCTYPE html>

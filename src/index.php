@@ -15,6 +15,8 @@
 	{
 		header("location: chat.php");
 	}
+
+	include "header.php";
 ?>
 
 <!DOCTYPE html>
